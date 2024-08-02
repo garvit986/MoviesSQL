@@ -2,6 +2,7 @@ const express = require('express');
 const { getUser, login, logout, register } = require('../controllers/userController');
 const { validateRegisterRequest, validateLoginRequest } = require('../validations/validationSchema');
 const { addFavorite, removeFavorite, getfavorite } = require('../controllers/movieController');
+const { getComment, addComment } = require('../controllers/commentController');
 
 const router = express.Router();
 router.post("/register",validateRegisterRequest,register)
@@ -11,5 +12,7 @@ router.get("/getuser", getUser)
 router.post("/addfavorite", addFavorite)
 router.post("/removefavorite", removeFavorite)
 router.get("/getfavorite",getfavorite)
+router.post("/addComment", addComment)
+router.get("/getComment",getComment)
 
 module.exports = router;

@@ -5,21 +5,21 @@ const comments = sequelize.define('comments', {
     username: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true
+      unique: false
     },
     imdbID: {
         type: DataTypes.STRING,
         allowNull: false,
-        unique: true,
+        unique: false,
     },
     comment: {
         type: DataTypes.STRING,
-        allowNull: true,
+        allowNull: false,
         unique: false,
     },
     rating: {
         type: DataTypes.STRING,
-        allowNull: true,
+        allowNull: false,
         unique: false,
     },
   }, {

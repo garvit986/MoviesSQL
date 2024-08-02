@@ -12,7 +12,8 @@ const messages = {
     INTERNAL_SERVER_ERROR: "An internal server error occurred",
     MISSING_AUTH_HEADER: "Missing Authorization header",
     PROVIDE_VALUES: "Fill Details Properly",
-    MOVIE_EXISTS: "Movie Exists"
+    MOVIE_EXISTS: "Movie Exists",
+    COMMENT_ADDED: "Comment added"
   };
   
   module.exports = messages;
