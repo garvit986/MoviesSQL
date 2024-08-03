@@ -7,13 +7,12 @@ const sendToken = async (user, statusCode, res, message) => {
       const options = {
         expires: new Date(Date.now() + expiresIn), // Valid Date object
         httpOnly: true
-      };
+        };
   
       res.status(statusCode).cookie('token', token, options).json({
         success: true,
         user,
         message,
-        token
       });
     } catch (error) {
       res.status(statusCodes.BAD_REQUEST).json({ success: false, message: 'Error generating token' });

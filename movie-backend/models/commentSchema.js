@@ -18,7 +18,7 @@ const comments = sequelize.define('comments', {
         unique: false,
     },
     rating: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: false,
         unique: false,
     },

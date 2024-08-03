@@ -3,11 +3,17 @@ const app = express();
 const sequelize = require('./config/dbConfig');
 const cookieParser = require('cookie-parser')
 const userRoutes = require('./routes/userRoutes')
+const cors = require('cors');
 
 require('dotenv').config(); 
 
 app.use(express.json());
 app.use(cookieParser());
+app.use(cors({
+  origin: 'http://localhost:3000', 
+  methods: 'GET,POST,PUT,DELETE',
+  allowedHeaders: 'Content-Type,Authorization',
+}));
 
 
 sequelize.authenticate()

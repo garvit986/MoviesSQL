@@ -10,9 +10,9 @@ router.post("/login",validateLoginRequest,login)
 router.get("/logout",logout)
 router.get("/getuser", getUser)
 router.post("/addfavorite", addFavorite)
-router.post("/removefavorite", removeFavorite)
-router.get("/getfavorite",getfavorite)
-router.post("/addComment", addComment)
-router.get("/getComment",getComment)
+router.delete("/removefavorite", removeFavorite)
+router.get("/getfavorite/:username",getfavorite)
+router.post("/addcomment/:imdbID", addComment)
+router.get("/getcomment/:imdbID",getComment)
 
 module.exports = router;

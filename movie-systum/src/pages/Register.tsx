@@ -10,6 +10,7 @@ import { Grid } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import Loading from "../components/Loading";
 import { FormValues } from "../interfaces/Types";
+import axios from "axios";
 
 const Register: React.FC = () => {
   const {
@@ -25,6 +26,19 @@ const Register: React.FC = () => {
     setLoading(true);
     setMessage("");
 
+    // try {
+    //   const response = await axios.post("http://localhost:4001/api/register", data, {headers:{
+    //     "Content-Type" : "application/json"
+    //   }})
+    //   setTimeout(() => {
+    //     setLoading(false);
+    //     navigate("/login");
+    //   }, 2000);
+    // } catch (error: any) {
+    //   setMessage(error.message)
+    //   setLoading(false)
+    // }
+
     try {
       const user: User = {
         id: 0,
@@ -39,6 +53,7 @@ const Register: React.FC = () => {
       setMessage(error.message);
       setLoading(false);
     }
+    
   };
 
   return (

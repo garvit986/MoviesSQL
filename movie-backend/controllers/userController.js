@@ -57,7 +57,7 @@ const logout = async (req, res) => {
 };
 
 const getUser = async (req, res) => {
-  const user = req.body;
+  const user = req.user;
   res.status(statusCodes.OK).json({
     success: true,
     user,

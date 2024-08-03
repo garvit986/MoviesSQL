@@ -12,6 +12,7 @@ import { useDispatch } from "react-redux";
 import { loginUser } from "../utils/LocalForage";
 import { login } from "../redux/userSlice";
 import { FormValues } from "../interfaces/Types";
+import axios from "axios";
 
 const Login: React.FC = () => {
   const { control, handleSubmit, formState: { errors } } = useForm<FormValues>();
@@ -21,6 +22,25 @@ const Login: React.FC = () => {
   const [error, setError] = useState("");
 
   const onSubmit = async (data: FormValues) => {
+    // try {
+    //   setLoading(true)
+    //   const response = await axios.post("http://localhost:4001/api/login", data, {headers:{
+    //     "Content-Type" : "application/json"
+    //   }})
+    //   setLoading(false)
+    //   if(response) {
+    //     console.log("Login Success")
+    //     // dispatch(login(response))
+    //     navigate("/movies")
+    //   } else{
+    //     setError("Invalid username and password")
+    //   }
+    // } catch (error) {
+    //   setLoading(false)
+    //   setError("Failed to login")
+    //   console.log(error)
+    // }
+
     try {
       setLoading(true);
       const user = await loginUser(data.username, data.password);

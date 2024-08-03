@@ -36,7 +36,7 @@ const removeFavorite = async(req,res)=>{
 }
 
 const getfavorite = async(req,res)=>{
-    const {username} = req.body
+    const {username} = req.params
     try {
         const user = await favmovies.findAll({where: {username}})
 
