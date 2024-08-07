@@ -9,7 +9,7 @@ import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import Loading from "../components/Loading";
 import { useDispatch } from "react-redux";
-import { loginUser } from "../utils/LocalForage";
+import { loginUser } from "../utils/Apis";
 import { login } from "../redux/userSlice";
 import { FormValues } from "../interfaces/Types";
 import axios from "axios";

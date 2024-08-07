@@ -14,6 +14,7 @@ const isAuthenticated = async(req,res) =>{
             return res.status(statusCodes.UNAUTHORIZED).json({ success: false, message: 'Invalid token' });
         }
         req.user = user
+        next();
     } catch (error) {
         res.status(statusCodes.UNAUTHORIZED).json({ success: false, message: 'Invalid token or user not found' });
     }

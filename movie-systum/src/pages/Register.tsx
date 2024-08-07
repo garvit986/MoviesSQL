@@ -5,7 +5,7 @@ import { Box } from "@mui/material";
 import { TextField } from "@mui/material";
 import { Button } from "@mui/material";
 import { User } from "../interfaces/Types";
-import { registerUser } from "../utils/LocalForage";
+import { registerUser } from "../utils/Apis";
 import { Grid } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import Loading from "../components/Loading";

@@ -57,11 +57,26 @@ const logout = async (req, res) => {
 };
 
 const getUser = async (req, res) => {
-  const user = req.user;
-  res.status(statusCodes.OK).json({
-    success: true,
-    user,
-  });
+  try {
+    const user = req.user;
+    if (!user) {
+      return res.status(statusCodes.NOT_FOUND).json({
+        success: false,
+        message: 'User not found',
+      });
+    }
+
+    res.status(statusCodes.OK).json({
+      success: true,
+      user,
+    });
+  } catch (error) {
+    console.error("Error retrieving user:", error);
+    res.status(statusCodes.INTERNAL_SERVER_ERROR).json({
+      success: false,
+      message: 'Internal server error',
+    });
+  }
 };
 
 module.exports = {

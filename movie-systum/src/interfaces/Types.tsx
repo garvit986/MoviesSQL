@@ -38,6 +38,8 @@ export interface Movie {
 }
 
 export interface Comment {
+  createdAt: any;
+  comment: any;
   id: string;
   imdbID: string;
   username: string;

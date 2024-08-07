@@ -14,7 +14,7 @@ import { ListItemText } from "@mui/material";
 import { loadMovies } from "../redux/movieSlice";
 import { AppDispatch, RootState } from "../redux/store";
 import { useNavigate } from "react-router-dom";
-import { addFavoriteMovie } from "../utils/LocalForage";
+import { addFavoriteMovie } from "../utils/Apis";
 import SearchBar from "../components/Search";
 import { Movie } from "../interfaces/Types";
 

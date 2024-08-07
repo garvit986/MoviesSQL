@@ -1,9 +1,5 @@
-import localforage from "localforage";
 import { User, Comment } from "../interfaces/Types";
 import axios from "axios";
-
-const USERS_KEY = "users";
-const COMMENTS_KEY_PREFIX = "comments_";
 
 // export const registerUser = async (user: User) => {
 //   let users: User[] = (await localforage.getItem<User[]>(USERS_KEY)) || [];

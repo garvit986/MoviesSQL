@@ -13,7 +13,7 @@ import { ListItemText } from "@mui/material";
 import { Rating } from "@mui/material";
 import moviesData from "../movies.json";
 import { Movie, Comment } from "../interfaces/Types";
-import { addComment, getComments } from "../utils/LocalForage";
+import { addComment, getComments } from "../utils/Apis";
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 
@@ -124,13 +124,11 @@ const MovieDetails: React.FC = () => {
                 </Button>
               </Box>
               <List>
-                {comments.map((comment) => (
-                  <ListItem key={comment.id} sx={{ mt: 1 }}>
+                {comments.map((commen) => (
+                  <ListItem key={commen.id} sx={{ mt: 1 }}>
                     <ListItemText
-                      primary={`${comment.text} (Rating: ${comment.rating})`}
-                      secondary={`By ${comment.username} on ${new Date(
-                        comment.date
-                      ).toLocaleString()}`}
+                      primary={`${commen.comment} (Rating: ${commen.rating})`}
+                      secondary={`By ${commen.username} on ${(new Date(commen.createdAt).toLocaleString())}`}
                     />
                   </ListItem>
                 ))}

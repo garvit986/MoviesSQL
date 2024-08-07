@@ -15,9 +15,16 @@ const addComment = async(req,res) =>{
 
 const getComment = async(req,res) =>{
     try {
-        const {imdbID} = req.body
-        const movie = await comments.findAll({where: {imdbID:imdbID}})
-        const fetchComments = movie.map(imdbID=>imdbID.comment)
+        const {imdbID} = req.params
+        const movie = await comments.findAll({where: {imdbID:imdbID},
+        attributes: ['comment', 'username', 'createdAt', 'rating']
+        })
+        const fetchComments = movie.map(imdbID=>({
+            comment: imdbID.comment,
+            username: imdbID.username,
+            createdAt: imdbID.createdAt,
+            rating: imdbID.rating 
+        }))
         res.status(statusCodes.OK).json({comments: fetchComments})
     } catch (error) {
         console.log(error)

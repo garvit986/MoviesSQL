@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Movie } from "../interfaces/Types";
-import { getFavoriteMovies, removeFavoriteMovie } from "../utils/LocalForage";
+import { getFavoriteMovies, removeFavoriteMovie } from "../utils/Apis";
 import moviesData from "../movies.json";
 import { useSelector } from "react-redux";
 import { Box } from "@mui/material";
